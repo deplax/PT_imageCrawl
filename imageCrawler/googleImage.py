@@ -70,13 +70,14 @@ driver.close()
 
 
 def downloadImage(dir, url, i):
+    print "download %s : %s" % (str(i).zfill(3), url)
     if url[-4:-3] == ".":
         urllib.urlretrieve(url, dir + str(i).zfill(3) + url[-4:])
     else:
         urllib.urlretrieve(url, dir + str(i).zfill(3) + ".jpg")
 
 i = 0
-dir = ".images/" + query + "/"
+dir = "images/" + query + "/"
 if not os.path.exists(dir):
     os.makedirs(dir)
 
